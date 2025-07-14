@@ -1,0 +1,34 @@
+{
+  "name": "artisalink",
+  "version": "1.0.0",
+  "description": "ArtisaLink is an online marketplace and engagement platform that connects discerning customers with skilled artisans across a range of crafts and trades. Whether you're looking for handcrafted furniture, welding,barber, bespoke clothing, or traditional art, ArtisaLink brings authentic craftsmanship directly to your fingertips.",
+  "main": "app.js",
+  "scripts": {
+    "dev": "node app.js",
+    "prod": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "dotenv",
+    "jsonwebtoken",
+    "bcrypt"
+  ],
+  "author": "Bowoto jeremiah",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^9.30.1",
+    "jest": "^30.0.4",
+    "nodemon": "^3.1.10"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.16.3",
+    "winston": "^3.17.0",
+    "winston-daily-rotate-file": "^5.0.0"
+  }
+}

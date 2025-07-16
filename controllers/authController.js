@@ -184,7 +184,6 @@ const verifyEmailOTP = async (req, res) => {
 };
 
 // PROFILE COMPLETION FUNCTION
-
 const completeProfile = async (req, res) => {
   try {
     const {
@@ -234,10 +233,9 @@ const completeProfile = async (req, res) => {
         },
         isProfileComplete: true,
       },
-      { new: true, runValidators: true } // Now enforce validation
+      { new: true, runValidators: true }
     );
 
-    // Generate JWT
     const token = jwt.sign(
       { id: updatedUser._id, role: updatedUser.role },
       process.env.JWT_SECRET,
@@ -261,6 +259,7 @@ const completeProfile = async (req, res) => {
     res.status(500).json({
       success: false,
       message: 'Profile completion failed',
+      error: error.message, // Added error message for debugging
     });
   }
 };

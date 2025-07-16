@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const authController = require('../controllers/authController');
-const upload = require('../middlewares/uploads');
+const { upload } = require('../config/cloudinary');
 
 // Registration flow
 router.post(

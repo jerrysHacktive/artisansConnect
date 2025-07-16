@@ -1,24 +1,20 @@
 const express = require('express');
 const cors = require('cors');
+const authRoute = require('./routes/authRoute');
 
 const app = express();
 
 // middleware
-app.use(cors()); //allows frontend request
+app.use(cors('*')); //allows frontend request
 app.use(express.json()); // parse JSON bodies
+// parse form data
 app.use(
   express.urlencoded({
     extended: true,
   })
-); // parse from data
+);
 
 //Routes
-
-//Error Handling
-app.all('*', (req, res, next) => {
-  next(new AppError(`Cant find ${req.originalUrl} on this server`, 404));
-});
-
-app.use(globalError); //
+app.use('/api/v1/auth', authRoute);
 
 module.exports = app;
